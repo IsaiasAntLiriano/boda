@@ -291,7 +291,6 @@ export default function Page() {
           <div className="rsvp-header">
             <h2 id="rsvp-title" className="rsvp-script-title">Confirma tu asistencia</h2>
             <p className="section-copy">Esperamos contar contigo</p>
-            <span className="passes-badge">Invitación #{guest?.id?.toUpperCase() || guestId?.toUpperCase()} · {displayGuest.people} persona{displayGuest.people === 1 ? '' : 's'}</span>
           </div>
           {loadingGuest ? <p className="rsvp-status">Cargando tu invitación...</p> : !guest ? <p className="invalid-invitation">Usa el enlace personal que te enviamos para confirmar.</p> : (
             <form onSubmit={submit} className="rsvp-form rsvp-form-redesigned" noValidate>
@@ -299,7 +298,6 @@ export default function Page() {
               <div className="rsvp-person-card">
                 <span className="rsvp-label">TITULAR DE LA INVITACIÓN *</span>
                 <strong>{guest.invitado_principal}</strong>
-                <span className="rsvp-pill">Titular</span>
                 <span className="rsvp-label">¿Asistirás? *</span>
                 <div className="rsvp-radio-row">
                   <label><input required type="radio" name="attendance" checked={principalAsiste === true} onChange={() => setPrincipalAsiste(true)} /> Sí, asistiré</label>

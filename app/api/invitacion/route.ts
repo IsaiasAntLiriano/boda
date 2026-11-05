@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 
-const APPS_SCRIPT_URL = process.env.APPS_SCRIPT_URL
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx0Zp889Oq4-1HFvJsd3lX-sRpwa7aSE2flAMeYS3GiS_E1m62xU8OnDl_sQ56Zffhc/exec';
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)

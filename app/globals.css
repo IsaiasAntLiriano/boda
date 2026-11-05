@@ -163,3 +163,28 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
     margin: 0;
   }
 }
+/* Nota de adultos en código de vestimenta */
+.dress-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: rgba(143, 163, 130, 0.1);
+  border: 1px solid rgba(143, 163, 130, 0.25);
+  text-align: left;
+}
+.dress-note-icon {
+  font-size: 1.2rem;
+  flex: none;
+  margin-top: 2px;
+}
+.dress-note p {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+  line-height: 1.55;
+  margin: 0;
+}

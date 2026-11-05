@@ -179,7 +179,7 @@ export default function Page() {
   <img className="hero-hug-photo" src="/pareja-abrazo.jpg" alt="María Mabel e Isaías abrazados en acuarela" />
   <div className="invite-card-arch">
   <div className="invite-card">
-  <p className="invite-label">Pase especial para</p>
+  <p className="invite-label">Invitación especial para</p>
   <h2>{guest?.titulo_invitacion?.trim() || displayGuest.name}</h2>
   {guest?.titulo_invitacion?.trim() && <p className="invite-guest-name">{displayGuest.name}</p>}
   {displayGuest.companions.length > 0 && <p className="invite-companions">Acompañantes: {displayGuest.companions.join(', ')}</p>}
@@ -272,7 +272,7 @@ export default function Page() {
               <div className="gift-details"><p><strong>Zelle:</strong> 401-492-7036 <button type="button" onClick={() => copyValue('zelle', '401-492-7036')}>{copiedKey === 'zelle' ? 'Copiado ✓' : 'Copiar'}</button></p><p><strong>Titular:</strong> María Mabel Collado Expósito</p></div>
             </details>
             <details>
-              <summary>Pesos (DOP) �� Banco BHD</summary>
+              <summary>Pesos (DOP) $$ Banco BHD</summary>
               <div className="gift-details">
                 {[['Banco', 'Banco BHD'], ['Nombre', 'ISAIAS LIRIANO'], ['Documento de identidad', '40222485977'], ['Cuenta de ahorros RD$', '29028340033'], ['Cuenta estándar', 'DO39BCBH00000000029028340033'], ['Correo', 'liriano0717@hotmail.com']].map(([label, value]) => <p key={label}><strong>{label}:</strong> {value} <button type="button" onClick={() => copyValue(label, value)}>{copiedKey === label ? 'Copiado ✓' : 'Copiar'}</button></p>)}
               </div>

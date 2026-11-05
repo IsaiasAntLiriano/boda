@@ -145,4 +145,21 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
     gap: 6px;
   }
 }
-
+/* Ajuste final de botones de confirmación en celular */
+@media (max-width: 767px) {
+  .rsvp-radio-row label {
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    letter-spacing: 0.04em;
+    font-size: 12px;
+    text-align: center;
+    word-break: normal;
+  }
+  .rsvp-radio-row label input {
+    margin: 0;
+  }
+}

@@ -105,5 +105,44 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
 .hotel-content .hotel-lead { max-width: 560px; }
 .hotel-button { align-self: center; }
 @media (max-width: 767px) { .hotel-card { height: auto; min-height: 0; grid-template-columns: 1fr; } .hotel-image-wrap { height: 220px; min-height: 220px; } .hotel-content { min-height: 0; height: auto; padding: 24px; } }
+/* Ajustes de confirmación para celular */
+@media (max-width: 767px) {
+  .rsvp-card-soft { padding: 20px 16px; }
 
+  .rsvp-radio-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+  }
+  .rsvp-radio-row label {
+    justify-content: center;
+    text-align: center;
+    padding: 10px 8px;
+    border: 1px solid #d6dccf;
+    border-radius: 12px;
+    background: #fff;
+    font-size: 13px;
+    line-height: 1.25;
+    white-space: normal;
+  }
+  .rsvp-radio-row label input {
+    flex: none;
+  }
+
+  .companion-card {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .companion-card .rsvp-radio-row {
+    grid-template-columns: 1fr 1fr;
+    font-size: 13px;
+  }
+
+  .companions-fieldset legend {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+}
 

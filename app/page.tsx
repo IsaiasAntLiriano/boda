@@ -257,10 +257,9 @@ export default function Page() {
   <div className="dress-color-item"><div className="dress-color-circle dress-color-green forbidden" aria-hidden="true"><i /></div><span>Verde</span></div>
   <div className="dress-color-item"><div className="dress-color-circle dress-color-yellow forbidden" aria-hidden="true"><i /></div><span>Amarillo pollito</span></div>
   <div className="dress-color-item"><div className="dress-color-circle dress-color-red forbidden" aria-hidden="true"><i /></div><span>Rojo</span></div>
-  <div className="dress-note">
   </div>
 
-  <span className="dress-note-icon">🤍</span>
+<span className="dress-note-icon">🤍</span>
   <p>Esta celebración está pensada para adultos. Con cariño les pedimos que esta noche sea solo para ellos.</p>
 </div>
 

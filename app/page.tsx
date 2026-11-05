@@ -165,7 +165,7 @@ export default function Page() {
           <span className="cover-envelope-wrap">
             <img className="cover-envelope" src={coverEnvelope} alt="Sobre botánico cerrado" />
           </span>
-          <span className="cover-tap">Toque para abrir</span>
+          <span className="cover-tap"> Toque para abrir </span>
         </button>
       )}
       <header className="hero">

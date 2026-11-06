@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Check, Church, Clock3, ExternalLink, MapPin, PartyPopper } from 'lucide-react'
+import { Check, Church, Clock3, ExternalLink, MapPin, Music2, PartyPopper, VolumeX } from 'lucide-react'
 
 const API_URL = '/api/invitacion'
 
@@ -63,6 +63,8 @@ export default function Page() {
   const [notice, setNotice] = useState<Notice | null>(null)
   const [copiedKey, setCopiedKey] = useState<string | null>(null)
   const audioRef = useRef<HTMLAudioElement>(null)
+  const [audioPlaying, setAudioPlaying] = useState(false)
+  const [audioError, setAudioError] = useState('')
   const [opening, setOpening] = useState(false)
   const [guestId, setGuestId] = useState<string | null>(null)
   const displayGuest = guest ? { name: guest.invitado_principal, people: guest.cantidad_personas, companions: guest.dependientes } : { name: '', people: 0, companions: [] as string[] }
@@ -95,8 +97,33 @@ export default function Page() {
 
   function openInvitation() {
     setOpening(true)
-    audioRef.current?.play().catch(() => {})
+    void playAudio()
     window.setTimeout(() => setInvitationOpened(true), 900)
+  }
+
+  async function playAudio() {
+    const audio = audioRef.current
+    if (!audio) return
+
+    setAudioError('')
+    try {
+      await audio.play()
+    } catch {
+      setAudioPlaying(false)
+      setAudioError('No se pudo reproducir la música. Inténtalo de nuevo con el botón de audio.')
+    }
+  }
+
+  function toggleAudio() {
+    const audio = audioRef.current
+    if (!audio) return
+
+    if (audio.paused) {
+      void playAudio()
+      return
+    }
+
+    audio.pause()
   }
 
   async function copyValue(key: string, value: string) {
@@ -137,7 +164,34 @@ export default function Page() {
 
   return (
     <main>
-      <audio ref={audioRef} src={invitationAudio} preload="none" aria-label="Música de la invitación" />
+      <audio
+        ref={audioRef}
+        src={invitationAudio}
+        preload="none"
+        loop
+        aria-label="Música de la invitación"
+        onPlay={() => setAudioPlaying(true)}
+        onPause={() => setAudioPlaying(false)}
+        onError={() => {
+          setAudioPlaying(false)
+          setAudioError('No se pudo cargar la música de la invitación.')
+        }}
+      />
+      {invitationOpened && (
+        <div className="audio-control-wrap">
+          <button
+            type="button"
+            className={`audio-control${audioPlaying ? ' is-playing' : ''}`}
+            onClick={toggleAudio}
+            aria-label={audioPlaying ? 'Pausar música' : 'Reproducir música'}
+            aria-pressed={audioPlaying}
+            title={audioPlaying ? 'Pausar música' : 'Reproducir música'}
+          >
+            {audioPlaying ? <Music2 aria-hidden="true" /> : <VolumeX aria-hidden="true" />}
+          </button>
+          {audioError && <span className="audio-control-error" role="status">{audioError}</span>}
+        </div>
+      )}
       {!invitationOpened && (
         <button type="button" className={`cover ${opening ? 'cover-open' : ''}`} onClick={openInvitation} aria-label="Toque para abrir la invitación">
           <img className="cover-branch cover-branch-top" src={coverBranchTop} alt="" aria-hidden="true" />

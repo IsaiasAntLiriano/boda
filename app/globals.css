@@ -106,6 +106,17 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
 @media (prefers-reduced-motion: reduce) { .hero-medallion, .hero-hug-photo { animation: none; } }
 @media (max-width: 767px) { .hero-medallion { width: 200px; } .hero-hug-photo { width: min(72vw, 260px); margin-bottom: 48px; } .invite-card-arch { width: min(100%, 420px); padding: 14px; } }
 
+.audio-control-wrap { position: fixed; right: 24px; bottom: calc(24px + env(safe-area-inset-bottom)); z-index: 40; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+.audio-control { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid rgba(177, 143, 78, .55); border-radius: 50%; background: rgba(252, 251, 249, .94); color: #2F3E34; box-shadow: 0 5px 18px rgba(47, 62, 52, .16); cursor: pointer; transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
+.audio-control:hover { transform: translateY(-2px); background: #fff; box-shadow: 0 8px 22px rgba(47, 62, 52, .2); }
+.audio-control:focus-visible { outline: 3px solid rgba(177, 143, 78, .45); outline-offset: 3px; }
+.audio-control svg { width: 22px; height: 22px; }
+.audio-control.is-playing svg { animation: audio-note-pulse 1.8s ease-in-out infinite; }
+.audio-control-error { max-width: min(300px, calc(100vw - 48px)); padding: 9px 12px; border: 1px solid rgba(177, 143, 78, .35); border-radius: 10px; background: rgba(252, 251, 249, .97); color: #2F3E34; box-shadow: 0 4px 14px rgba(47, 62, 52, .12); font-size: 12px; line-height: 1.4; text-align: left; }
+@keyframes audio-note-pulse { 50% { transform: scale(1.12); } }
+@media (max-width: 767px) { .audio-control-wrap { right: 16px; bottom: calc(16px + env(safe-area-inset-bottom)); }.audio-control { width: 48px; height: 48px; } }
+@media (prefers-reduced-motion: reduce) { .audio-control, .audio-control.is-playing svg { transition: none; animation: none; } }
+
 .hotel-card { height: auto; min-height: 0; }
 .rsvp-person-card .rsvp-pill { display: inline-flex; align-self: flex-start; margin: 7px 0 14px; padding: 4px 10px; border-radius: 999px; background: rgba(184, 105, 111, .12); color: var(--rose); font-size: .75rem; }
 .companions-fieldset legend { display: flex; justify-content: space-between; gap: 16px; width: 100%; }

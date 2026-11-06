@@ -296,25 +296,25 @@ export default function Page() {
       <section className="section rsvp-section" aria-labelledby="rsvp-title">
         <div className="rsvp-card rsvp-card-soft">
           <div className="rsvp-header">
-            <h2 id="rsvp-title" className="rsvp-script-title">Confirma tu asistencia</h2>
-            <p className="section-copy">Esperamos contar contigo</p>
+            <h2 id="rsvp-title" className="rsvp-script-title">CONFIRMACIÓN DE ASISTENCIA</h2>
+            <p className="section-copy"> Favor confirmar su asistencia antes del 2 de diciembre de 2026</p>
           </div>
           {loadingGuest ? <p className="rsvp-status">Cargando tu invitación...</p> : !guest ? <p className="invalid-invitation">Usa el enlace personal que te enviamos para confirmar.</p> : (
             <form onSubmit={submit} className="rsvp-form rsvp-form-redesigned" noValidate>
               {notice?.tone === 'error' && <p className="rsvp-status error" role="alert">{notice.text}</p>}
               <div className="rsvp-person-card">
-                <span className="rsvp-label">TITULAR DE LA INVITACIÓN *</span>
+                <span className="rsvp-label">INVITACIÓN A NOMBRE DE</span>
                 <strong>{guest.invitado_principal}</strong>
                 <span className="rsvp-label">¿Asistirás? *</span>
                 <div className="rsvp-radio-row">
-                  <label><input required type="radio" name="attendance" checked={principalAsiste === true} onChange={() => setPrincipalAsiste(true)} /> Sí, asistiré</label>
-                  <label className="rsvp-radio-no"><input required type="radio" name="attendance" checked={principalAsiste === false} onChange={() => setPrincipalAsiste(false)} /> No podré asistir</label>
+                  <label><input required type="radio" name="attendance" checked={principalAsiste === true} onChange={() => setPrincipalAsiste(true)} /> Asistiré con gusto</label>
+                  <label className="rsvp-radio-no"><input required type="radio" name="attendance" checked={principalAsiste === false} onChange={() => setPrincipalAsiste(false)} /> Lamento no poder asistir</label>
                 </div>
               </div>
-              {guest.dependientes.length > 0 && <fieldset className="companions-fieldset"><legend><span>PERSONAS INCLUIDAS EN TU INVITACIÓN</span><small>Confirma quiénes van</small></legend><div className="companions-list">{guest.dependientes.map((dependiente, index) => <div className="companion-card" key={`${dependiente}-${index}`}><span className="rsvp-label">ACOMPAÑANTE {index + 1}</span><strong>{dependiente}</strong><div className="rsvp-radio-row"><label><input required type="radio" name={`companion-${index}`} checked={dependientesAsisten[index] === true} onChange={() => setDependientesAsisten((current) => current.map((answer, answerIndex) => answerIndex === index ? true : answer))} /> Sí va</label><label className="rsvp-radio-no"><input required type="radio" name={`companion-${index}`} checked={dependientesAsisten[index] === false} onChange={() => setDependientesAsisten((current) => current.map((answer, answerIndex) => answerIndex === index ? false : answer))} /> No va</label></div></div>)}</div></fieldset>}
-              <div className="rsvp-summary">Total de personas confirmadas en este pase: <strong>{(principalAsiste === true ? 1 : 0) + dependientesAsisten.filter(Boolean).length} de {guest.cantidad_personas} persona{guest.cantidad_personas === 1 ? '' : 's'}</strong></div>
-              <label htmlFor="message" className="rsvp-label">Mensaje para los novios o alergias alimentarias (opcional)</label>
-              <textarea id="message" rows={3} maxLength={500} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Escribe un mensaje para María Mabel e Isaías..." />
+              {guest.dependientes.length > 0 && <fieldset className="companions-fieldset"><legend><span>PERSONAS INCLUIDAS EN SU INVITACIÓN</span><small>Por favor, confirme quiénes asistirán</small></legend><div className="companions-list">{guest.dependientes.map((dependiente, index) => <div className="companion-card" key={`${dependiente}-${index}`}><span className="rsvp-label">ACOMPAÑANTE {index + 1}</span><strong>{dependiente}</strong><div className="rsvp-radio-row"><label><input required type="radio" name={`companion-${index}`} checked={dependientesAsisten[index] === true} onChange={() => setDependientesAsisten((current) => current.map((answer, answerIndex) => answerIndex === index ? true : answer))} /> Asistirá</label><label className="rsvp-radio-no"><input required type="radio" name={`companion-${index}`} checked={dependientesAsisten[index] === false} onChange={() => setDependientesAsisten((current) => current.map((answer, answerIndex) => answerIndex === index ? false : answer))} /> No asistirá</label></div></div>)}</div></fieldset>}
+              <div className="rsvp-summary">Total de personas confirmadas <strong>{(principalAsiste === true ? 1 : 0) + dependientesAsisten.filter(Boolean).length} de {guest.cantidad_personas} persona{guest.cantidad_personas === 1 ? '' : 's'}</strong></div>
+              <label htmlFor="message" className="rsvp-label">Mensaje para los novios</label>
+              <textarea id="message" rows={3} maxLength={500} value={message} onChange={(e) => setMessage(e.target.value)} placeholder="Escribe un mensaje para María Mabel e Isaías Antonio" />
               {notice?.tone === 'success' && <div className="success-message"><Check aria-hidden="true" /><strong>{notice.text}</strong><span>{notice.detail}</span><span>{(principalAsiste === true || dependientesAsisten.includes(true)) ? '¡Gracias! Te esperamos con mucho cariño.' : 'Gracias por avisarnos. Te llevaremos en el corazón.'}</span></div>}
               <button className="rsvp-submit-button" type="submit" disabled={isSubmitting}>{isSubmitting ? 'Enviando…' : 'Enviar confirmación'}</button>
             </form>

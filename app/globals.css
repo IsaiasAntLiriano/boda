@@ -56,10 +56,14 @@ body:has(.cover) { overflow: hidden; }
 .hero-names { font-family: var(--font-script); font-weight: 400; font-size: clamp(2rem, 7.2vw, 4.2rem); line-height: 1.05; white-space: nowrap; color: var(--ink-soft); margin: 14px 0 6px; }
 .hero-names span { color: var(--gold); font-family: var(--font-serif); font-style: italic; font-size: .62em; padding: 0 .12em; }
 .hero-date { font-family: var(--font-serif); font-size: clamp(1.2rem, 4.6vw, 1.6rem); letter-spacing: .14em; color: var(--ink); margin: 10px 0 26px; }
-.hero-ceremony-details { text-align: center; margin: 10px 0 26px; }
-.hero-ceremony-details p { font-family: var(--font-serif); font-size: 1.05rem; color: var(--ink); line-height: 1.7; margin: 0; }
+.hero-date-location { width: 100%; margin: 16px 0 10px; text-align: center; color: #2F3E34; font-family: var(--font-serif), serif; }
+.hero-date-location p { margin: 0; }
+.hero-event-date { font-size: 1.22rem; font-weight: 700; }
+.hero-date-rule { display: block; width: 148px; height: 1px; margin: 7px auto; background: var(--gold); }
+.hero-event-time, .hero-event-venue { font-size: 1.18rem; font-weight: 700; line-height: 1.35; }
+.hero-event-location { margin-top: 5px !important; color: var(--ink-soft); font-size: 1rem; font-style: italic; }
 .hero-ceremony-location { margin-top: 8px; font-style: italic; color: var(--ink-soft); }
-.hero-divider { display: flex; align-items: center; gap: 14px; color: var(--gold); margin-bottom: 34px; }
+.hero-divider { display: flex; align-items: center; gap: 14px; color: var(--gold); margin: 14px auto 0; }
 .hero-divider i { display: block; width: 60px; height: 1px; background: var(--gold); }
 .hero-divider b { font-weight: 400; }
 .invite-card { width: min(100%, 420px); margin-top: 0; padding: 26px 22px; border: 1px solid var(--euc-light); border-radius: 22px; background: var(--cream); box-shadow: 0 10px 30px rgba(47,61,50,.08); text-align: center; }
@@ -81,7 +85,7 @@ body { background-color: #FAF6EF; color: var(--ink); }
 h1, h2, h3, .section-title { color: var(--ink); }
 p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro { color: var(--ink-soft); }
 .section, .hero { color: var(--ink-soft); }
-@media (max-width: 767px) { .countdown-section, .family-section, .events-section, .hotel-section, .gifts-card, .event-card, .family-card, .info-card, .rsvp-card { background-size: cover; } .hero-content { width: 100%; } .hero-names { font-size: clamp(1rem, 5.8vw, 2.4rem); letter-spacing: -.04em; } .hero-blessing { font-size: .95rem; } .hero-parents p { font-size: .95rem; } .hero-ceremony-details p { font-size: .92rem; } .rsvp-script-title { font-size: clamp(28px, 9vw, 52px); } .cover { place-items: center; } .cover-envelope-wrap { width: min(80vw, 720px); margin: 0 auto; } }
+@media (max-width: 767px) { .countdown-section, .family-section, .events-section, .hotel-section, .gifts-card, .event-card, .family-card, .info-card, .rsvp-card { background-size: cover; } .hero-content { width: 100%; } .hero-names { font-size: clamp(1rem, 5.8vw, 2.4rem); letter-spacing: -.04em; } .hero-blessing { font-size: .95rem; } .hero-parents p { font-size: .95rem; } .hero-date-location { margin-top: 12px; }.hero-event-date { font-size: 1.08rem; }.hero-event-time, .hero-event-venue { font-size: 1.05rem; }.hero-event-location { font-size: .92rem; }.rsvp-script-title { font-size: clamp(28px, 9vw, 52px); } .cover { place-items: center; } .cover-envelope-wrap { width: min(80vw, 720px); margin: 0 auto; } }
 
 .dress-card .dress-color-white { background: #FFFFFF !important; }
 .dress-card .dress-color-yellow { background: #FFE600 !important; }

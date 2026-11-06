@@ -161,14 +161,15 @@ export default function Page() {
   </div>
   <p className="hero-blessing">Tienen el placer de invitarle al matrimonio de sus hijos</p>
   <img className="hero-medallion" src="/pareja-medallon.jpg" alt="María Mabel e Isaías en acuarela" />
+  <div className="hero-date-location">
+    <p className="hero-event-date">Sábado 2 de enero de 2027</p>
+    <span className="hero-date-rule" aria-hidden="true" />
+    <p className="hero-event-time">7:30 p. m.</p>
+    <p className="hero-event-venue">Parroquia El Buen Pastor</p>
+    <p className="hero-event-location">Santo Domingo, República Dominicana.</p>
+    <div className="hero-divider" aria-hidden="true"><i /><b>♥</b><i /></div>
+  </div>
   <h1 className="hero-names">María Mabel <span>&amp;</span> Isaías Antonio</h1>
-          <div className="hero-ceremony-details">
-            <p>A celebrarse el sábado dos de enero del dos mil veintisiete,</p>
-            <p>a las siete y media de la noche,</p>
-            <p>en la Parroquia El Buen Pastor.</p>
-            <p className="hero-ceremony-location">Santo Domingo, República Dominicana.</p>
-          </div>
-          <div className="hero-divider" aria-hidden="true"><i /><b>♥</b><i /></div>
   <div className="invite-card-arch">
   <div className="invite-card">
   <p className="invite-label">Invitación especial para</p>

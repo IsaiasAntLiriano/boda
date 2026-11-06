@@ -269,14 +269,20 @@ export default function Page() {
             <img src={churchInteriorImage} alt="Ilustración en acuarela del altar de la Parroquia El Buen Pastor" />
           </div>
           <h2 id="watercolor-title" className="watercolor-venue-title">Parroquia El Buen Pastor</h2>
-          <a className="watercolor-location-link" href="https://maps.app.goo.gl/1GqpF5gDYTNcH5tt6" target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /> Ver ubicación <ExternalLink aria-hidden="true" /></a>
+          <div className="map-frame watercolor-map-frame">
+            <iframe title="Mapa de la Parroquia El Buen Pastor" src={ceremonyMap} loading="lazy" allowFullScreen />
+          </div>
+          <a className="watercolor-location-link" href="https://maps.app.goo.gl/1GqpF5gDYTNcH5tt6" target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /> Cómo llegar <ExternalLink aria-hidden="true" /></a>
         </div>
         <div className="watercolor-event watercolor-reception">
           <p className="watercolor-event-description"><strong>Recepción:</strong> Donde brindaremos por el comienzo de nuestra vida juntos</p>
           <p className="watercolor-event-time">9:00 PM</p>
           <img className="watercolor-hotel-image" src="/acuarela_hotel_2K.png" alt="Ilustración en acuarela del Renaissance Santo Domingo Jaragua Hotel & Casino" />
           <h2 className="watercolor-venue-title">Renaissance Santo Domingo Jaragua Hotel &amp; Casino</h2>
-          <a className="watercolor-location-link" href="https://maps.app.goo.gl/Fs7PkiSuE7hTUHAM8" target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /> Ver ubicación <ExternalLink aria-hidden="true" /></a>
+          <div className="map-frame watercolor-map-frame">
+            <iframe title="Mapa del Renaissance Santo Domingo Jaragua Hotel & Casino" src={receptionMap} loading="lazy" allowFullScreen />
+          </div>
+          <a className="watercolor-location-link" href="https://maps.app.goo.gl/Fs7PkiSuE7hTUHAM8" target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /> Cómo llegar <ExternalLink aria-hidden="true" /></a>
         </div>
       </section>
 

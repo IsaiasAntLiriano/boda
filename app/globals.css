@@ -190,6 +190,9 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
 .watercolor-location-link:hover { filter: brightness(.96); }
 .watercolor-location-link:focus-visible { outline: 3px solid rgba(47, 74, 56, .35); outline-offset: 3px; }
 .watercolor-location-link svg { width: 15px; height: 15px; }
+.watercolor-map-frame { width: min(100%, 880px); height: clamp(240px, 42vw, 400px); margin: 18px auto 14px; border-radius: 12px; }
+.watercolor-location-link { width: min(100%, 880px); min-height: 72px; justify-content: flex-start; padding: 18px 26px; border-radius: 16px; font-size: 19px; }
+.watercolor-location-link svg:last-child { margin-left: auto; opacity: .7; }
 .watercolor-reception { margin-top: 52px; }
 .watercolor-hotel-image { display: block; width: min(100%, 700px); height: auto; margin: 0 auto 22px; border-radius: 12px; }
 .hotel-card { grid-template-columns: 1fr; }
@@ -201,6 +204,8 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
   .watercolor-event-description { font-size: 15px; }
   .watercolor-grid { grid-template-columns: 1fr; max-width: 440px; }
   .watercolor-grid img { aspect-ratio: 1.45; }
+  .watercolor-map-frame { height: clamp(230px, 62vw, 340px); }
+  .watercolor-location-link { min-height: 64px; padding: 15px 20px; font-size: 17px; }
   .watercolor-reception { margin-top: 40px; }
   .watercolor-venue-title { font-size: 19px; }
 }

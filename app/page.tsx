@@ -188,7 +188,6 @@ export default function Page() {
             <p className="hero-ceremony-location">Santo Domingo, República Dominicana.</p>
           </div>
           <div className="hero-divider" aria-hidden="true"><i /><b>♥</b><i /></div>
-  <img className="hero-hug-photo" src="/pareja-abrazo.jpg" alt="María Mabel e Isaías abrazados en acuarela" />
   <div className="invite-card-arch">
   <div className="invite-card">
   <p className="invite-label">Invitación especial para</p>
@@ -247,6 +246,8 @@ export default function Page() {
           )}
         </div>
       </section>
+
+      <img className="hero-hug-photo" src="/pareja-abrazo.jpg" alt="María Mabel e Isaías abrazados en acuarela" />
 
       <section className="section events-section" aria-labelledby="events-title">
         <div className="section-intro"><p className="eyebrow">Celebremos juntos</p><h2 id="events-title" className="section-title">Detalles del evento</h2></div>

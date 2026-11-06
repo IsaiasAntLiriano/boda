@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Check, Church, Clock3, ExternalLink, MapPin } from 'lucide-react'
+import { Building2, Check, Church, Clock3, ExternalLink, MapPin } from 'lucide-react'
 
 const API_URL = '/api/invitacion'
 
@@ -209,7 +209,7 @@ export default function Page() {
         </blockquote>
         <div className="watercolor-event">
           <p className="watercolor-event-description"><strong>Ceremonia:</strong> Donde, con Dios en el centro, nos diremos sí para toda la vida</p>
-          <div className="watercolor-ceremony-details">
+          <div className="watercolor-venue-details">
             <p className="watercolor-event-time"><Clock3 aria-hidden="true" /> <span>7:30 p. m.</span></p>
             <h2 id="watercolor-title" className="watercolor-venue-title"><Church aria-hidden="true" /> <span>Parroquia El Buen Pastor</span></h2>
             <p className="watercolor-event-location">Santo Domingo, República Dominicana</p>
@@ -225,9 +225,12 @@ export default function Page() {
         </div>
         <div className="watercolor-event watercolor-reception">
           <p className="watercolor-event-description"><strong>Recepción:</strong> Donde brindaremos por el comienzo de nuestra vida juntos</p>
-          <p className="watercolor-event-time">9:00 PM</p>
+          <div className="watercolor-venue-details">
+            <p className="watercolor-event-time"><Clock3 aria-hidden="true" /> <span>9:00 p. m.</span></p>
+            <h2 className="watercolor-venue-title"><Building2 aria-hidden="true" /> <span>Renaissance Santo Domingo Jaragua Hotel &amp; Casino</span></h2>
+            <p className="watercolor-event-location">Santo Domingo, República Dominicana</p>
+          </div>
           <img className="watercolor-hotel-image" src="/acuarela_hotel_2K.png" alt="Ilustración en acuarela del Renaissance Santo Domingo Jaragua Hotel & Casino" />
-          <h2 className="watercolor-venue-title">Renaissance Santo Domingo Jaragua Hotel &amp; Casino</h2>
           <div className="map-frame watercolor-map-frame">
             <iframe title="Mapa del Renaissance Santo Domingo Jaragua Hotel & Casino" src={receptionMap} loading="lazy" allowFullScreen />
           </div>

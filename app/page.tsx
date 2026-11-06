@@ -159,7 +159,7 @@ export default function Page() {
     <p><strong>Isidro Antonio Liriano Santana</strong></p>
     <p><strong>Reyna Claribel Madera Torres</strong></p>
   </div>
-  <p className="hero-blessing">Tienen el placer de invitarles al matrimonio de sus hijos</p>
+  <p className="hero-blessing">Tienen el placer de invitarle al matrimonio de sus hijos</p>
   <img className="hero-medallion" src="/pareja-medallon.jpg" alt="María Mabel e Isaías en acuarela" />
   <h1 className="hero-names">María Mabel <span>&amp;</span> Isaías Antonio</h1>
           <div className="hero-ceremony-details">

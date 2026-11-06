@@ -196,6 +196,8 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
 .watercolor-reception { margin-top: 52px; }
 .watercolor-hotel-image { display: block; width: min(100%, 700px); height: auto; margin: 0 auto 22px; border-radius: 12px; }
 .hotel-card { grid-template-columns: 1fr; }
+.extras-grid { grid-template-columns: minmax(0, 1fr); }
+.extras-grid > .dress-card, .extras-grid > .gifts-card { width: 100%; }
 
 @media (max-width: 680px) {
   .watercolor-section { padding-top: 35px; }

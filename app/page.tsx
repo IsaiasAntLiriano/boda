@@ -20,7 +20,6 @@ const heroGarden = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/fond
 const ceremonyMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.165107027097!2d-69.94472402463478!3d18.461972482620222!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5620863a9b535%3A0x23e22c41c177ea6a!2sParroquia%20El%20Buen%20Pastor!5e1!3m2!1ses!2sdo!4v1792948828219!5m2!1ses!2sdo'
 const receptionMap = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3942.158238349917!2d-69.89982870000001!3d18.462271499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf8829a31364e5%3A0xabe5b14bcd1f354b!2sRenaissance%20Santo%20Domingo%20Jaragua%20Hotel%20%26%20Casino!5e1!3m2!1ses!2sdo!4v1792948589506!5m2!1ses!2sdo'
 const hotelBookingLink = 'https://www.marriott.com/es/event-reservations/reservation-link.mi?id=1786128172706&key=GRP&app=resvlink&_branch_match_id=1560374761125822978&_branch_referrer=H4sIAAAAAAAAA8soKSkottLXTywo0MtNLCrKzC8p0UvOz9UvSi3OyczLts9MsTU0tzAzNLIwNDcyNzBTy06ttHUPClBLLCiwLUotLgOpUqsrSk1LLSrKzEuPTyrKLy9OLbJ1zijKz00FAF8UmuxgAAAA'
-const hotelImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Hotel%20Jaragua-S1WEObXt1p7BHkCVGLVf1mqw9JCH5U.jpeg'
 
 function Countdown() {
   const [remaining, setRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 })
@@ -283,7 +282,6 @@ export default function Page() {
 
       <section className="section hotel-section" aria-labelledby="hotel-title">
         <div className="hotel-card">
-          <div className="hotel-image-wrap"><img src={hotelImage} alt="Exterior del Renaissance Santo Domingo Jaragua Hotel & Casino" /></div>
           <div className="hotel-content">
             <p className="eyebrow">Si vienes de lejos</p>
             <h2 id="hotel-title" className="section-title">Renaissance Santo Domingo Jaragua</h2>

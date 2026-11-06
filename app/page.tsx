@@ -258,10 +258,26 @@ export default function Page() {
       </section>
 
       <section className="section watercolor-section" aria-labelledby="watercolor-title">
-        <div className="section-intro"><p className="eyebrow">Nuestra ceremonia</p><h2 id="watercolor-title" className="section-title">Un escenario para nuestro sí</h2></div>
-        <div className="watercolor-grid">
-          <figure><img src={churchExteriorImage} alt="Ilustración en acuarela del exterior de la Parroquia El Buen Pastor" /><figcaption>Parroquia El Buen Pastor</figcaption></figure>
-          <figure><img src={churchInteriorImage} alt="Ilustración en acuarela del altar de la Parroquia El Buen Pastor" /><figcaption>Donde celebraremos nuestra ceremonia</figcaption></figure>
+        <blockquote className="watercolor-quote">
+          <p>Si a uno solo pueden vencerle, dos juntos resistirán. Una cuerda de tres cabos no es fácil de romper.</p>
+          <cite>— Eclesiastés 4,12</cite>
+        </blockquote>
+        <div className="watercolor-event">
+          <p className="watercolor-event-description"><strong>Ceremonia:</strong> Donde, con Dios en el centro, nos diremos sí para toda la vida</p>
+          <p className="watercolor-event-time">7:30 PM</p>
+          <div className="watercolor-grid">
+            <img src={churchExteriorImage} alt="Ilustración en acuarela del exterior de la Parroquia El Buen Pastor" />
+            <img src={churchInteriorImage} alt="Ilustración en acuarela del altar de la Parroquia El Buen Pastor" />
+          </div>
+          <h2 id="watercolor-title" className="watercolor-venue-title">Parroquia El Buen Pastor</h2>
+          <a className="watercolor-location-link" href="https://maps.app.goo.gl/1GqpF5gDYTNcH5tt6" target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /> Ver ubicación <ExternalLink aria-hidden="true" /></a>
+        </div>
+        <div className="watercolor-event watercolor-reception">
+          <p className="watercolor-event-description"><strong>Recepción:</strong> Donde brindaremos por el comienzo de nuestra vida juntos</p>
+          <p className="watercolor-event-time">9:00 PM</p>
+          <img className="watercolor-hotel-image" src="/acuarela_hotel_2K.png" alt="Ilustración en acuarela del Renaissance Santo Domingo Jaragua Hotel & Casino" />
+          <h2 className="watercolor-venue-title">Renaissance Santo Domingo Jaragua Hotel &amp; Casino</h2>
+          <a className="watercolor-location-link" href="https://maps.app.goo.gl/Fs7PkiSuE7hTUHAM8" target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /> Ver ubicación <ExternalLink aria-hidden="true" /></a>
         </div>
       </section>
 

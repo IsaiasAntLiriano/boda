@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Check, Clock3, ExternalLink, MapPin } from 'lucide-react'
+import { Check, ExternalLink, MapPin } from 'lucide-react'
 
 const API_URL = '/api/invitacion'
 
@@ -48,24 +48,6 @@ function Countdown() {
         </div>
       ))}
     </div>
-  )
-}
-
-function EventCard({ type, title, time, map, directions }: { type: string; title: string; time: string; map: string; directions: string }) {
-  return (
-    <article className="event-card">
-      <div className="event-heading">
-        <span className="eyebrow">{type}</span>
-        <h3>{title}</h3>
-        <p><Clock3 aria-hidden="true" /> {time}</p>
-      </div>
-      <div className="map-frame">
-        <iframe title={`Mapa de ${title}`} src={map} loading="lazy" allowFullScreen />
-      </div>
-      <a className="secondary-button" href={directions} target="_blank" rel="noreferrer">
-        <MapPin aria-hidden="true" /> Cómo llegar <ExternalLink aria-hidden="true" />
-      </a>
-    </article>
   )
 }
 
@@ -247,14 +229,6 @@ export default function Page() {
       </section>
 
       <img className="hero-hug-photo" src="/pareja-abrazo.jpg" alt="María Mabel e Isaías abrazados en acuarela" />
-
-      <section className="section events-section" aria-labelledby="events-title">
-        <div className="section-intro"><p className="eyebrow">Celebremos juntos</p><h2 id="events-title" className="section-title">Detalles del evento</h2></div>
-        <div className="events-grid">
-          <EventCard type="Ceremonia" title="Parroquia El Buen Pastor" time="7:30 PM" map={ceremonyMap} directions="https://maps.app.goo.gl/1GqpF5gDYTNcH5tt6" />
-          <EventCard type="Recepción" title="Hotel Jaragua" time="9:00 PM" map={receptionMap} directions="https://maps.app.goo.gl/Fs7PkiSuE7hTUHAM8" />
-        </div>
-      </section>
 
       <section className="section watercolor-section" aria-labelledby="watercolor-title">
         <blockquote className="watercolor-quote">

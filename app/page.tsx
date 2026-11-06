@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Check, Church, Clock3, ExternalLink, MapPin, Music2, PartyPopper, VolumeX } from 'lucide-react'
+import { Check, Church, Clock3, ExternalLink, MapPin, Menu, Music2, PartyPopper, VolumeX, X } from 'lucide-react'
 
 const API_URL = '/api/invitacion'
 
@@ -65,8 +65,12 @@ export default function Page() {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [audioPlaying, setAudioPlaying] = useState(false)
   const [audioError, setAudioError] = useState('')
+  const [navigationOpen, setNavigationOpen] = useState(false)
   const [opening, setOpening] = useState(false)
   const [guestId, setGuestId] = useState<string | null>(null)
+  const menuButtonRef = useRef<HTMLButtonElement>(null)
+  const drawerCloseButtonRef = useRef<HTMLButtonElement>(null)
+  const drawerRef = useRef<HTMLElement>(null)
   const displayGuest = guest ? { name: guest.invitado_principal, people: guest.cantidad_personas, companions: guest.dependientes } : { name: '', people: 0, companions: [] as string[] }
 
   useEffect(() => {
@@ -94,6 +98,50 @@ export default function Page() {
       .catch(() => setGuest(null))
       .finally(() => setLoadingGuest(false))
   }, [guestId])
+
+  useEffect(() => {
+      if (!navigationOpen) return
+
+      const previousOverflow = document.body.style.overflow
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') setNavigationOpen(false)
+      }
+
+      document.body.style.overflow = 'hidden'
+      document.addEventListener('keydown', handleKeyDown)
+      drawerCloseButtonRef.current?.focus()
+
+      return () => {
+        document.body.style.overflow = previousOverflow
+        document.removeEventListener('keydown', handleKeyDown)
+        menuButtonRef.current?.focus()
+      }
+  }, [navigationOpen])
+
+  function navigateToSection(sectionId: string) {
+      setNavigationOpen(false)
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  function trapDrawerFocus(event: React.KeyboardEvent<HTMLElement>) {
+      if (event.key !== 'Tab') return
+
+      const focusableElements = drawerRef.current?.querySelectorAll<HTMLElement>(
+        'button:not([disabled]), a[href]'
+      )
+      if (!focusableElements?.length) return
+
+      const firstElement = focusableElements[0]
+      const lastElement = focusableElements[focusableElements.length - 1]
+
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault()
+        lastElement.focus()
+      } else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault()
+        firstElement.focus()
+      }
+  }
 
   function openInvitation() {
     setOpening(true)
@@ -178,19 +226,74 @@ export default function Page() {
         }}
       />
       {invitationOpened && (
-        <div className="audio-control-wrap">
+        <>
+          <div className="audio-control-wrap">
+            <button
+              type="button"
+              className={`audio-control${audioPlaying ? ' is-playing' : ''}`}
+              onClick={toggleAudio}
+              aria-label={audioPlaying ? 'Pausar música' : 'Reproducir música'}
+              aria-pressed={audioPlaying}
+              title={audioPlaying ? 'Pausar música' : 'Reproducir música'}
+            >
+              {audioPlaying ? <Music2 aria-hidden="true" /> : <VolumeX aria-hidden="true" />}
+            </button>
+            {audioError && <span className="audio-control-error" role="status">{audioError}</span>}
+          </div>
           <button
+            ref={menuButtonRef}
             type="button"
-            className={`audio-control${audioPlaying ? ' is-playing' : ''}`}
-            onClick={toggleAudio}
-            aria-label={audioPlaying ? 'Pausar música' : 'Reproducir música'}
-            aria-pressed={audioPlaying}
-            title={audioPlaying ? 'Pausar música' : 'Reproducir música'}
+            className="navigation-menu-button"
+            onClick={() => setNavigationOpen(true)}
+            aria-label="Abrir menú de navegación"
+            aria-expanded={navigationOpen}
+            aria-controls="invitation-navigation"
           >
-            {audioPlaying ? <Music2 aria-hidden="true" /> : <VolumeX aria-hidden="true" />}
+            <Menu aria-hidden="true" />
           </button>
-          {audioError && <span className="audio-control-error" role="status">{audioError}</span>}
-        </div>
+          <div
+            className={`navigation-drawer-layer${navigationOpen ? ' is-open' : ''}`}
+            aria-hidden={!navigationOpen}
+            inert={!navigationOpen}
+          >
+              <button
+                type="button"
+                className="navigation-backdrop"
+                onClick={() => setNavigationOpen(false)}
+                aria-label="Cerrar menú de navegación"
+              />
+              <aside
+                ref={drawerRef}
+                id="invitation-navigation"
+                className="navigation-drawer"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="navigation-title"
+                onKeyDown={trapDrawerFocus}
+              >
+                <div className="navigation-drawer-header">
+                  <h2 id="navigation-title">Explora la invitación</h2>
+                  <button
+                    ref={drawerCloseButtonRef}
+                    type="button"
+                    className="navigation-close-button"
+                    onClick={() => setNavigationOpen(false)}
+                    aria-label="Cerrar menú"
+                  >
+                    <X aria-hidden="true" />
+                  </button>
+                </div>
+                <nav aria-label="Secciones de la invitación">
+                  <a href="#ceremonia" onClick={(event) => { event.preventDefault(); navigateToSection('ceremonia') }}>Ceremonia</a>
+                  <a href="#recepcion" onClick={(event) => { event.preventDefault(); navigateToSection('recepcion') }}>Recepción</a>
+                  <a href="#hospedaje" onClick={(event) => { event.preventDefault(); navigateToSection('hospedaje') }}>Hospedaje</a>
+                  <a href="#vestimenta" onClick={(event) => { event.preventDefault(); navigateToSection('vestimenta') }}>Código de vestimenta</a>
+                  <a href="#regalos" onClick={(event) => { event.preventDefault(); navigateToSection('regalos') }}>Regalos</a>
+                  <a href="#confirmacion" onClick={(event) => { event.preventDefault(); navigateToSection('confirmacion') }}>Confirmación de asistencia</a>
+                </nav>
+              </aside>
+          </div>
+        </>
       )}
       {!invitationOpened && (
         <button type="button" className={`cover ${opening ? 'cover-open' : ''}`} onClick={openInvitation} aria-label="Toque para abrir la invitación">
@@ -261,7 +364,7 @@ export default function Page() {
           <p>Si a uno solo pueden vencerle, dos juntos resistirán. Una cuerda de tres cabos no es fácil de romper.</p>
           <cite>— Eclesiastés 4,12</cite>
         </blockquote>
-        <div className="watercolor-event">
+        <div id="ceremonia" className="watercolor-event">
           <p className="watercolor-event-description"><strong>Ceremonia:</strong> Donde, con Dios en el centro, nos diremos sí para toda la vida</p>
           <div className="watercolor-venue-details">
             <p className="watercolor-event-time"><Clock3 aria-hidden="true" /> <span>7:30 p. m.</span></p>
@@ -277,7 +380,7 @@ export default function Page() {
           </div>
           <a className="watercolor-location-link" href="https://maps.app.goo.gl/1GqpF5gDYTNcH5tt6" target="_blank" rel="noreferrer"><MapPin aria-hidden="true" /> Cómo llegar <ExternalLink aria-hidden="true" /></a>
         </div>
-        <div className="watercolor-event watercolor-reception">
+        <div id="recepcion" className="watercolor-event watercolor-reception">
           <p className="watercolor-event-description"><strong>Recepción:</strong> Donde brindaremos por el comienzo de nuestra vida juntos</p>
           <div className="watercolor-venue-details">
             <p className="watercolor-event-time"><Clock3 aria-hidden="true" /> <span>9:00 p. m.</span></p>
@@ -293,7 +396,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="section hotel-section" aria-labelledby="hotel-title">
+      <section id="hospedaje" className="section hotel-section" aria-labelledby="hotel-title">
         <div className="hotel-card">
           <div className="hotel-content">
             <p className="eyebrow">Si vienen de lejos tendrán</p>
@@ -306,7 +409,7 @@ export default function Page() {
 
       <section className="section extras-section" aria-label="Información adicional">
         <div className="extras-grid">
-<article className="info-card dress-card dress-card-expanded">
+<article id="vestimenta" className="info-card dress-card dress-card-expanded">
   <h2 className="dress-heading">Código de vestimenta</h2>
   <p className="dress-formality">Formal</p>
   <div className="dress-suggestions">
@@ -326,7 +429,7 @@ export default function Page() {
   </div>
           </article>
 
-        <div className="gifts-card">
+        <div id="regalos" className="gifts-card">
           <p className="eyebrow">Con cariño</p>
           <h2 id="gifts-title" className="section-title">Regalos</h2>
           <p className="gifts-intro">Nos llena de ilusión compartir este día con ustedes, rodeados de su cariño. Si deseas hacernos llegar algún detalle, debajo te dejamos las opciones.</p>
@@ -350,7 +453,7 @@ export default function Page() {
         </div>
       </section>
 
-      <section className="section rsvp-section" aria-labelledby="rsvp-title">
+      <section id="confirmacion" className="section rsvp-section" aria-labelledby="rsvp-title">
         <div className="rsvp-card rsvp-card-soft">
           <div className="rsvp-header">
             <h2 id="rsvp-title" className="rsvp-script-title">CONFIRMACIÓN DE ASISTENCIA</h2>

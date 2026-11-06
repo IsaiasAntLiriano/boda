@@ -425,7 +425,7 @@ export default function Page() {
   <div className="dress-color-item"><div className="dress-color-circle dress-color-red forbidden" aria-hidden="true"><i /></div><span>Rojo</span></div>
   </div>
   <p className="dress-explanation">El blanco está reservado para la novia y el verde eucalipto es el color de nuestro cortejo. Le pedimos evitar también los tonos muy llamativos, como el rojo y el amarillo vivo.</p>
-  <p className="dress-adults-note">🤍 Esta celebración está pensada para adultos.</p>
+  <p className="dress-adults-note">🤍 Esta celebración está pensada exclusivamente para adultos. Agradecemos mucho tu comprensión y cariño al acompañarnos.</p>
   </div>
           </article>
 

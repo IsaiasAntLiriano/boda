@@ -171,7 +171,14 @@ export default function Page() {
       <header className="hero">
         <img className="hero-bg" src={heroGarden} alt="" aria-hidden="true" />
         <div className="hero-content">
-  <p className="hero-blessing">Te invitamos a nuestra boda</p>
+  <div className="hero-parents">
+    <p>Francisco Rafael Collado Vargas</p>
+    <p>Marilú Expósito González</p>
+    <p className="hero-parents-amp">&amp;</p>
+    <p>Isidro Antonio Liriano Santana</p>
+    <p>Reyna Claribel Madera Torres</p>
+  </div>
+  <p className="hero-blessing">Tienen el placer de invitarles al matrimonio de sus hijos</p>
   <img className="hero-medallion" src="/pareja-medallon.jpg" alt="María Mabel e Isaías en acuarela" />
   <h1 className="hero-names">María Mabel <span>&amp;</span> Isaías Antonio</h1>
           <p className="hero-date">Sábado 2 de Enero de 2027</p>

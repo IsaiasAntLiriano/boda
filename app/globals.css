@@ -47,7 +47,10 @@ body:has(.cover) { overflow: hidden; }
 .hero { min-height: 100svh; position: relative; overflow: hidden; display: grid; place-items: start center; padding: 56px 20px 40px; background: var(--ivory); }
 .hero-bg { position: absolute; inset: 0 0 auto 0; width: 100%; height: 78%; object-fit: cover; object-position: center 70%; opacity: .28; -webkit-mask-image: linear-gradient(#000 55%, transparent); mask-image: linear-gradient(#000 55%, transparent); }
 .hero-content { position: relative; z-index: 1; width: min(100%, 640px); text-align: center; display: flex; flex-direction: column; align-items: center; }
-.hero-blessing { font-family: var(--font-serif); font-style: italic; font-size: 1.15rem; color: var(--ink-soft); }
+.hero-parents { text-align: center; margin-bottom: 12px; }
+.hero-parents p { font-family: var(--font-serif); font-size: 1.05rem; color: var(--ink); line-height: 1.6; margin: 0; }
+.hero-parents-amp { font-family: var(--font-serif); font-size: 1.1rem; color: var(--gold); margin: 4px 0; }
+.hero-blessing { font-family: var(--font-serif); font-style: italic; font-size: 1.15rem; color: var(--ink-soft); margin-top: 10px; }
 .hero-names { font-family: var(--font-script); font-weight: 400; font-size: clamp(2rem, 7.2vw, 4.2rem); line-height: 1.05; white-space: nowrap; color: var(--ink-soft); margin: 14px 0 6px; }
 .hero-names span { color: var(--gold); font-family: var(--font-serif); font-style: italic; font-size: .62em; padding: 0 .12em; }
 .hero-date { font-family: var(--font-serif); font-size: clamp(1.2rem, 4.6vw, 1.6rem); letter-spacing: .14em; color: var(--ink); margin: 10px 0 26px; }
@@ -73,7 +76,7 @@ body { background-color: #FAF6EF; color: var(--ink); }
 h1, h2, h3, .section-title { color: var(--ink); }
 p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro { color: var(--ink-soft); }
 .section, .hero { color: var(--ink-soft); }
-@media (max-width: 767px) { .countdown-section, .family-section, .events-section, .hotel-section, .gifts-card, .event-card, .family-card, .info-card, .rsvp-card { background-size: cover; } .hero-content { width: 100%; } .hero-names { font-size: clamp(1rem, 5.8vw, 2.4rem); letter-spacing: -.04em; } .hero-blessing { font-size: .95rem; } }
+@media (max-width: 767px) { .countdown-section, .family-section, .events-section, .hotel-section, .gifts-card, .event-card, .family-card, .info-card, .rsvp-card { background-size: cover; } .hero-content { width: 100%; } .hero-names { font-size: clamp(1rem, 5.8vw, 2.4rem); letter-spacing: -.04em; } .hero-blessing { font-size: .95rem; } .hero-parents p { font-size: .95rem; } }
 
 .dress-card .dress-color-white { background: #FFFFFF !important; }
 .dress-card .dress-color-yellow { background: #FFF176 !important; }

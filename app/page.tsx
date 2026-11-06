@@ -201,16 +201,6 @@ export default function Page() {
         </div>
       </header>
 
-      <section className="section family-section" aria-labelledby="family-title">
-        <div className="family-card">
-          <p className="family-intro">Con la bendición de Dios y de nuestros padres</p>
-          <h2 id="family-title" className="section-title">Un día lleno de amor</h2>
-          <div className="family-grid">
-            <div><p className="eyebrow">Padres de la novia</p><p>Francisco Rafael Collado Vargas</p><p>Marilú Expósito González</p></div>
-            <div><p className="eyebrow">Padres del novio</p><p>Isidro Antonio Liriano Madera</p><p>Reyna Claribel Madera Torres</p></div>
-          </div>
-        </div>
-      </section>
 
 <section id="detalles" className="section countdown-section">
   <div className="countdown-botanical" aria-hidden="true">

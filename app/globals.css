@@ -187,11 +187,17 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
 .watercolor-quote p { margin: 0; font-size: 19px; line-height: 1.5; }
 .watercolor-quote cite { display: block; margin-top: 14px; font-style: normal; font-weight: 600; }
 .watercolor-event-description { max-width: 800px; margin: 0 auto; color: var(--ink); font-size: 17px; line-height: 1.5; }
+.watercolor-ceremony-details { display: flex; flex-direction: column; align-items: center; gap: 7px; margin: 16px auto 18px; color: var(--ink); font-family: var(--font-serif), serif; }
 .watercolor-event-time { margin: 14px 0 10px; color: var(--ink); font-size: 16px; font-style: italic; }
+.watercolor-ceremony-details .watercolor-event-time { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0; color: inherit; font-size: 19px; font-style: normal; font-weight: 600; }
+.watercolor-ceremony-details .watercolor-event-time svg { width: 20px; height: 20px; stroke-width: 1.8; }
+.watercolor-event-location { margin: 0; color: var(--ink-soft); font-size: 17px; font-style: italic; }
 .watercolor-grid { max-width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin: 0 auto 22px; }
 .watercolor-grid img { width: 100%; aspect-ratio: 1.45; height: auto; border: 1px solid #e5ebe5; border-radius: 12px; object-fit: cover; box-shadow: 0 10px 24px rgba(38, 78, 114, .08); }
 .watercolor-grid img:first-child { object-position: center 58%; }
 .watercolor-venue-title { margin: 0 0 14px; color: var(--ink); font: 600 21px/1.3 var(--font-serif), serif; }
+.watercolor-ceremony-details .watercolor-venue-title { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 0; }
+.watercolor-ceremony-details .watercolor-venue-title svg { width: 23px; height: 23px; flex: 0 0 auto; stroke-width: 1.8; }
 .watercolor-location-link { display: inline-flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 17px; border-radius: 999px; background: #E58C9A; color: #2F4A38; font-size: 13px; font-weight: 600; text-decoration: none; transition: filter .2s ease; }
 .watercolor-location-link:hover { filter: brightness(.96); }
 .watercolor-location-link:focus-visible { outline: 3px solid rgba(47, 74, 56, .35); outline-offset: 3px; }
@@ -210,10 +216,13 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
   .watercolor-quote { margin-bottom: 28px; }
   .watercolor-quote p { font-size: 17px; }
   .watercolor-event-description { font-size: 15px; }
+  .watercolor-ceremony-details .watercolor-event-time { font-size: 17px; }
+  .watercolor-event-location { font-size: 15px; }
   .watercolor-grid { grid-template-columns: 1fr; max-width: 440px; }
   .watercolor-grid img { aspect-ratio: 1.45; }
   .watercolor-map-frame { height: clamp(230px, 62vw, 340px); }
   .watercolor-location-link { min-height: 64px; padding: 15px 20px; font-size: 17px; }
   .watercolor-reception { margin-top: 40px; }
   .watercolor-venue-title { font-size: 19px; }
+  .watercolor-ceremony-details .watercolor-venue-title svg { width: 21px; height: 21px; }
 }

@@ -209,12 +209,12 @@ export default function Page() {
         </blockquote>
         <div className="watercolor-event">
           <p className="watercolor-event-description"><strong>Ceremonia:</strong> Donde, con Dios en el centro, nos diremos sí para toda la vida</p>
+          <h2 id="watercolor-title" className="watercolor-venue-title">Parroquia El Buen Pastor</h2>
           <p className="watercolor-event-time">7:30 PM</p>
           <div className="watercolor-grid">
             <img src={churchExteriorImage} alt="Ilustración en acuarela del exterior de la Parroquia El Buen Pastor" />
             <img src={churchInteriorImage} alt="Ilustración en acuarela del altar de la Parroquia El Buen Pastor" />
           </div>
-          <h2 id="watercolor-title" className="watercolor-venue-title">Parroquia El Buen Pastor</h2>
           <div className="map-frame watercolor-map-frame">
             <iframe title="Mapa de la Parroquia El Buen Pastor" src={ceremonyMap} loading="lazy" allowFullScreen />
           </div>

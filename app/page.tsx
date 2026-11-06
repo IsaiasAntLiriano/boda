@@ -181,7 +181,12 @@ export default function Page() {
   <p className="hero-blessing">Tienen el placer de invitarles al matrimonio de sus hijos</p>
   <img className="hero-medallion" src="/pareja-medallon.jpg" alt="María Mabel e Isaías en acuarela" />
   <h1 className="hero-names">María Mabel <span>&amp;</span> Isaías Antonio</h1>
-          <p className="hero-date">Sábado 2 de Enero de 2027</p>
+          <div className="hero-ceremony-details">
+            <p>A celebrarse el sábado dos de enero del dos mil veintisiete,</p>
+            <p>a las siete y media de la noche,</p>
+            <p>en la Parroquia El Buen Pastor.</p>
+            <p className="hero-ceremony-location">Santo Domingo, República Dominicana.</p>
+          </div>
           <div className="hero-divider" aria-hidden="true"><i /><b>♥</b><i /></div>
   <img className="hero-hug-photo" src="/pareja-abrazo.jpg" alt="María Mabel e Isaías abrazados en acuarela" />
   <div className="invite-card-arch">

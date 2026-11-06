@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'react'
-import { Building2, Check, Church, Clock3, ExternalLink, MapPin } from 'lucide-react'
+import { Check, Church, Clock3, ExternalLink, MapPin, PartyPopper } from 'lucide-react'
 
 const API_URL = '/api/invitacion'
 
@@ -227,7 +227,8 @@ export default function Page() {
           <p className="watercolor-event-description"><strong>Recepción:</strong> Donde brindaremos por el comienzo de nuestra vida juntos</p>
           <div className="watercolor-venue-details">
             <p className="watercolor-event-time"><Clock3 aria-hidden="true" /> <span>9:00 p. m.</span></p>
-            <h2 className="watercolor-venue-title"><Building2 aria-hidden="true" /> <span>Renaissance Santo Domingo Jaragua Hotel &amp; Casino</span></h2>
+            <h2 className="watercolor-venue-title"><PartyPopper aria-hidden="true" /> <span>Salón Anacaona</span></h2>
+            <p className="watercolor-venue-hotel">Renaissance Santo Domingo Jaragua Hotel &amp; Casino</p>
             <p className="watercolor-event-location">Santo Domingo, República Dominicana</p>
           </div>
           <img className="watercolor-hotel-image" src="/acuarela_hotel_2K.png" alt="Ilustración en acuarela del Renaissance Santo Domingo Jaragua Hotel & Casino" />

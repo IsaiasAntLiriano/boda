@@ -267,8 +267,8 @@ export default function Page() {
   <div className="dress-color-item"><div className="dress-color-circle dress-color-yellow forbidden" aria-hidden="true"><i /></div><span>Amarillo</span></div>
   <div className="dress-color-item"><div className="dress-color-circle dress-color-red forbidden" aria-hidden="true"><i /></div><span>Rojo</span></div>
   </div>
-  <p className="dress-explanation">El blanco está reservado para la novia y el verde eucalipto es el color de nuestro cortejo. Te pedimos evitar también los tonos muy llamativos, como el rojo y el amarillo vivo.</p>
-  <p className="dress-adults-note">🤍 Esta celebración está pensada para adultos. Con cariño les pedimos que esta noche sea solo para ellos.</p>
+  <p className="dress-explanation">El blanco está reservado para la novia y el verde eucalipto es el color de nuestro cortejo. Le pedimos evitar también los tonos muy llamativos, como el rojo y el amarillo vivo.</p>
+  <p className="dress-adults-note">🤍 Esta celebración está pensada para adultos.</p>
   </div>
           </article>
 

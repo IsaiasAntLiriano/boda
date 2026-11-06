@@ -96,7 +96,7 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
 @keyframes hero-medallion-fade { from { opacity: 0; } to { opacity: 1; } }
 .invite-card-arch { position: relative; isolation: isolate; width: min(100%, 420px); padding: 22px; overflow: visible; border-radius: 22px; background: rgba(255, 253, 247, 0.92); }
 .invite-card-arch .invite-card { width: 100%; margin-top: 0; background: rgba(255, 253, 247, 0.92); }
-.hero-hug-photo { display: block; width: 260px; height: auto; margin: 0 auto 64px; border: 1px solid #B9CCB5; border-radius: 16px; box-shadow: 0 10px 28px rgba(47, 61, 50, 0.16); object-fit: contain; animation: hero-hug-photo-fade 1.2s ease both; }
+.hero-hug-photo { display: block; width: 260px; height: auto; margin: 32px auto 64px; border: 1px solid #B9CCB5; border-radius: 16px; box-shadow: 0 10px 28px rgba(47, 61, 50, 0.16); object-fit: contain; animation: hero-hug-photo-fade 1.2s ease both; }
 @keyframes hero-hug-photo-fade { from { opacity: 0; } to { opacity: 1; } }
 .footer-couple-photo { display: block; width: 180px; height: 240px; margin: 0 auto 18px; border: 1px solid #B9CCB5; border-radius: 50%; object-fit: cover; object-position: center top; box-shadow: 0 8px 22px rgba(47, 61, 50, 0.16); animation: footer-photo-fade 1.2s ease both; }
 @keyframes footer-photo-fade { from { opacity: 0; } to { opacity: 1; } }
@@ -104,7 +104,7 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
 @media (prefers-reduced-motion: reduce) { .footer-couple-photo { animation: none; } }
 @media (max-width: 767px) { .footer-couple-photo { width: 150px; height: 200px; } }
 @media (prefers-reduced-motion: reduce) { .hero-medallion, .hero-hug-photo { animation: none; } }
-@media (max-width: 767px) { .hero-medallion { width: 200px; } .hero-hug-photo { width: min(72vw, 260px); margin-bottom: 48px; } .invite-card-arch { width: min(100%, 420px); padding: 14px; } }
+@media (max-width: 767px) { .hero-medallion { width: 200px; } .hero-hug-photo { width: min(72vw, 260px); margin-top: 24px; margin-bottom: 48px; } .invite-card-arch { width: min(100%, 420px); padding: 14px; } }
 
 .audio-control-wrap { position: fixed; right: 24px; bottom: calc(24px + env(safe-area-inset-bottom)); z-index: 40; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
 .audio-control { display: grid; width: 52px; height: 52px; place-items: center; border: 1px solid rgba(177, 143, 78, .55); border-radius: 50%; background: rgba(252, 251, 249, .94); color: #2F3E34; box-shadow: 0 5px 18px rgba(47, 62, 52, .16); cursor: pointer; transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }

@@ -211,7 +211,7 @@ export default function Page() {
               <div className="rsvp-person-card">
                 <span className="rsvp-label">INVITACIÓN A NOMBRE DE</span>
                 <strong>{guest.invitado_principal}</strong>
-                <span className="rsvp-label">¿Asistirás? *</span>
+                <span className="rsvp-label">¿Asistirá? *</span>
                 <div className="rsvp-radio-row">
                   <label><input required type="radio" name="attendance" checked={principalAsiste === true} onChange={() => setPrincipalAsiste(true)} /> Asistiré con gusto</label>
                   <label className="rsvp-radio-no"><input required type="radio" name="attendance" checked={principalAsiste === false} onChange={() => setPrincipalAsiste(false)} /> Lamento no poder asistir</label>
@@ -263,7 +263,7 @@ export default function Page() {
       <section className="section hotel-section" aria-labelledby="hotel-title">
         <div className="hotel-card">
           <div className="hotel-content">
-            <p className="eyebrow">Si vienes de lejos</p>
+            <p className="eyebrow">Si viene de lejos tendrá</p>
             <h2 id="hotel-title" className="section-title">Renaissance Santo Domingo Jaragua</h2>
             <p className="hotel-lead">Para quienes vienen de fuera, reservamos habitaciones en el hotel de la celebración. Usando nuestro enlace, tendrás acceso a una tarifa especial para la boda.</p>
   <a className="primary-button hotel-button" href={hotelBookingLink} target="_blank" rel="noreferrer"><ExternalLink aria-hidden="true" /> Ver habitaciones y reservar</a>
@@ -281,7 +281,7 @@ export default function Page() {
     <p>♂ Traje oscuro</p>
   </div>
   <div className="dress-color-content">
-  <p className="dress-avoid-label">Te pedimos evitar estos colores</p>
+  <p className="dress-avoid-label">Le pedimos evitar estos colores</p>
   <div className="dress-color-grid" aria-label="Colores que no se pueden usar">
   <div className="dress-color-item"><div className="dress-color-circle dress-color-white forbidden" aria-hidden="true"><i /></div><span>Blanco</span></div>
   <div className="dress-color-item"><div className="dress-color-circle dress-color-green forbidden" aria-hidden="true"><i /></div><span>Verde</span></div>

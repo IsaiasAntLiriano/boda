@@ -92,7 +92,7 @@ p, label, li, .event-meta, .hotel-lead, .hotel-note, .family-intro, .gifts-intro
 .dress-card .dress-color-red { background: #FF0000 !important; }
 .dress-card .dress-color-green { background: #A9B4AB !important; }
 
-.hero-medallion { width: 240px; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 50%; border: 1px solid #B9CCB5; box-shadow: 0 10px 28px rgba(47, 61, 50, 0.18); animation: hero-medallion-fade 1.2s ease both; }
+.hero-medallion { width: 240px; height: auto; aspect-ratio: 1 / 1; margin-top: 12px; object-fit: cover; border-radius: 50%; border: 1px solid #B9CCB5; box-shadow: 0 10px 28px rgba(47, 61, 50, 0.18); animation: hero-medallion-fade 1.2s ease both; }
 @keyframes hero-medallion-fade { from { opacity: 0; } to { opacity: 1; } }
 .invite-card-arch { position: relative; isolation: isolate; width: min(100%, 420px); padding: 22px; overflow: visible; border-radius: 22px; background: rgba(255, 253, 247, 0.92); }
 .invite-card-arch .invite-card { width: 100%; margin-top: 0; background: rgba(255, 253, 247, 0.92); }

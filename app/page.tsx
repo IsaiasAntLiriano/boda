@@ -432,7 +432,7 @@ export default function Page() {
         <div id="regalos" className="gifts-card">
           <p className="eyebrow">Con cariño</p>
           <h2 id="gifts-title" className="section-title">Regalos</h2>
-          <p className="gifts-intro">Nos llena de ilusión compartir este día con ustedes, rodeados de su cariño. Si deseas hacernos llegar algún detalle, debajo te dejamos las opciones.</p>
+          <p className="gifts-intro">Nos llena de ilusión compartir este día con ustedes, rodeados de su cariño. Si desea hacernos llegar algún detalle, debajo le dejamos las opciones.</p>
           <div className="gift-accordion">
             <details>
               <summary>Dólares (USD) · Zelle</summary>

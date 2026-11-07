@@ -317,6 +317,7 @@ export default function Page() {
     <p><strong>Reyna Claribel Madera Torres</strong></p>
   </div>
   <p className="hero-blessing">Tienen el placer de invitarle al matrimonio de sus hijos</p>
+  <h1 className="hero-names">María Mabel <span>&amp;</span> Isaías Antonio</h1>
   <img className="hero-medallion" src="/pareja-medallon.jpg" alt="María Mabel e Isaías en acuarela" />
   <div className="hero-date-location">
     <p className="hero-event-date">Sábado 2 de enero de 2027</p>
@@ -326,7 +327,6 @@ export default function Page() {
     <p className="hero-event-location">Santo Domingo, República Dominicana.</p>
     <div className="hero-divider" aria-hidden="true"><i /><b>♥</b><i /></div>
   </div>
-  <h1 className="hero-names">María Mabel <span>&amp;</span> Isaías Antonio</h1>
   <div className="invite-card-arch">
   <div className="invite-card">
   <p className="invite-label">Invitación especial para</p>

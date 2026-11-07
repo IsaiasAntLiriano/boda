@@ -401,7 +401,7 @@ export default function Page() {
           <div className="hotel-content">
             <p className="eyebrow">Nuestro hotel</p>
             <h2 id="hotel-title" className="section-title">Renaissance Santo Domingo Jaragua</h2>
-            <p className="hotel-lead">Para mayor comodidad de nuestros invitados, hay habitaciones disponibles en el hotel de la celebración. Usando nuestro enlace, tendrás acceso a una tarifa especial exclusiva para nuestra boda.</p>
+            <p className="hotel-lead">Para mayor comodidad de nuestros invitados, hay habitaciones disponibles en el hotel de la celebración. Usando nuestro enlace, tendrá acceso a una tarifa especial exclusiva para nuestra boda.</p>
   <a className="primary-button hotel-button" href={hotelBookingLink} target="_blank" rel="noreferrer"><ExternalLink aria-hidden="true" /> Ver habitaciones y reservar</a>
           </div>
         </div>
